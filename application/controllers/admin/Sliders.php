@@ -42,10 +42,11 @@ class Sliders extends CI_Controller {
 		$this->load->library('session');
 		$this->load->library('alias');
 		$this->form_validation->set_rules('name', 'Tên hình ảnh', 'required');
-		if ($this->form_validation->run() == TRUE) 
+		if ($this->form_validation->run() == TRUE)
 		{
 			$mydata= array(
 				'name' =>$_POST['name'],
+				'type' =>$_POST['type'],
 				'link' =>$string=$this->alias->str_alias($_POST['name']),
 				'created'=>$today,
 				'created_by'=>$this->session->userdata('id'),
@@ -54,8 +55,8 @@ class Sliders extends CI_Controller {
 				'trash'=>1,
 				'status'=>$_POST['status']
 			);
-			$config['upload_path']          = './public/images/banners/';
-			$config['allowed_types']        = 'gif|jpg|png';
+			$config['upload_path']          = './public/assets/images/';
+			$config['allowed_types']        = 'gif|jpg|png|jpeg';
 			$config['max_size']             = 2000;
 			$this->load->library('upload', $config);
 			if ( $this->upload->do_upload('img'))
@@ -67,8 +68,8 @@ class Sliders extends CI_Controller {
 			$this->Msliders->slider_insert($mydata);
 			$this->session->set_flashdata('success', 'Thêm slider thành công');
 			redirect('admin/sliders/','refresh');
-		} 
-		else 
+		}
+		else
 		{
 			$this->data['view']='insert';
 			$this->data['title']='Thêm sliders';
@@ -89,19 +90,18 @@ class Sliders extends CI_Controller {
 		$this->load->library('session');
 		$this->load->library('alias');
 		$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required');
-		$this->form_validation->set_rules('link', 'Liên kết', 'required');
-		if ($this->form_validation->run() == TRUE) 
+		if ($this->form_validation->run() == TRUE)
 		{
 			$mydata= array(
-				'link'=>$_POST['link'],
 				'name' =>$_POST['name'],
 				'modified'=>$today,
 				'modified_by'=>$this->session->userdata('fullname'),
+				'type' =>$_POST['type'],
 				'trash'=>1,
 				'status'=>$_POST['status']
 			);
-			$config['upload_path']          = './public/images/banners/';
-			$config['allowed_types']        = 'gif|jpg|png';
+			$config['upload_path']          = './public/assets/images/';
+			$config['allowed_types']        = 'gif|jpg|png|jpeg';
 			$config['max_size']             = 2000;
 			$this->load->library('upload', $config);
 			if ( $this->upload->do_upload('img'))
@@ -109,10 +109,11 @@ class Sliders extends CI_Controller {
 				$data = $this->upload->data();
 				$mydata['img']=$data['file_name'];
 			}
+			// echo "<pre>---In ra---\n".print_r($mydata)."</pre>";
 			$this->Msliders->slider_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật slider thành công');
 			redirect('admin/sliders/','refresh');
-		} 
+		}
 		$this->data['view']='update';
 		$this->data['title']='Cập nhật sliders';
 		$this->load->view('backend/layout', $this->data);
@@ -163,5 +164,5 @@ class Sliders extends CI_Controller {
 		$this->session->set_flashdata('success', 'Xóa slider thành công');
 		redirect('admin/sliders/recyclebin','refresh');
 	}
-	
+
 }

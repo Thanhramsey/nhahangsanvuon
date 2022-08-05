@@ -167,14 +167,15 @@ http://www.templatemo.com/tm-515-eatery
                               <!-- <h4>Tea Time &amp; Dining</h4> -->
                          </div>
                     </div>
+					<?php foreach ($listquan as $sp) :?>
 
-                    <div class="col-md-4 col-sm-6">
+						<div class="col-md-4 col-sm-6">
                          <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/menu-image1.jpg" class="image-popup" title="Gà nướng Tây Nguyên">
-                                   <img src="public/assets/images/menu-image1.jpg" class="img-responsive" alt="">
+                         <div class="menu-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <a href="public/assets/images/<?php echo $sp['img']; ?>" class="image-popup" title="Gà nướng Tây Nguyên">
+                                   <img src="public/assets/images/<?php echo $sp['img']; ?>" class="img-responsive" alt="">
 
-                                   <div class="menu-info">
+                                   <!-- <div class="menu-info">
                                         <div class="menu-item">
                                              <h3>Gà nướng Tây Nguyên</h3>
                                              <p>Gà / Nướng</p>
@@ -182,105 +183,13 @@ http://www.templatemo.com/tm-515-eatery
                                         <div class="menu-price">
                                              <span>220.000 VNĐ</span>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </a>
                          </div>
                     </div>
+					<?php endforeach; ?>
 
-                    <div class="col-md-4 col-sm-6">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/menu-image2.jpg" class="image-popup" title="Cá lóc chiên giòn">
-                                   <img src="public/assets/images/menu-image2.jpg" class="img-responsive" alt="">
 
-                                   <div class="menu-info">
-                                        <div class="menu-item">
-                                             <h3>Cá lóc chiên giòn</h3>
-                                             <p>Cá lóc</p>
-                                        </div>
-                                        <div class="menu-price">
-                                             <span>140.000 VNĐ</span>
-                                        </div>
-                                   </div>
-                              </a>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/menu-image3.jpg" class="image-popup" title="Heo rừng nướng">
-                                   <img src="public/assets/images/menu-image3.jpg" class="img-responsive" alt="">
-
-                                   <div class="menu-info">
-                                        <div class="menu-item">
-                                             <h3>Heo rừng nướng</h3>
-                                             <p>Heo rừng</p>
-                                        </div>
-                                        <div class="menu-price">
-                                             <span>160.000 VNĐ</span>
-                                        </div>
-                                   </div>
-                              </a>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/menu-image4.jpg" class="image-popup" title="Lẩu hải sản">
-                                   <img src="public/assets/images/menu-image4.jpg" class="img-responsive" alt="">
-
-                                   <div class="menu-info">
-                                        <div class="menu-item">
-                                             <h3>Lẩu hải sản</h3>
-                                             <p>Lẩu</p>
-                                        </div>
-                                        <div class="menu-price">
-                                             <span>160.000 VNĐ</span>
-                                        </div>
-                                   </div>
-                              </a>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/menu-image5.jpg" class="image-popup" title="Project title">
-                                   <img src="public/assets/images/menu-image5.jpg" class="img-responsive" alt="">
-
-                                   <div class="menu-info">
-                                        <div class="menu-item">
-                                             <h3>Thịt rắn</h3>
-                                             <p>Rắn</p>
-                                        </div>
-                                        <div class="menu-price">
-                                             <span>Theo thời vụ</span>
-                                        </div>
-                                   </div>
-                              </a>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/menu-image6.jpg" class="image-popup" title="Project title">
-                                   <img src="public/assets/images/menu-image6.jpg" class="img-responsive" alt="">
-
-                                   <div class="menu-info">
-                                        <div class="menu-item">
-                                             <h3>Cùng nhiều món ăn khác</h3>
-                                             <!-- <p>Pepper / Crispy</p> -->
-                                        </div>
-                                        <div class="menu-price">
-                                             <!-- <span>$30</span> -->
-                                        </div>
-                                   </div>
-                              </a>
-                         </div>
-                    </div>
 
 
                </div>
@@ -299,113 +208,18 @@ http://www.templatemo.com/tm-515-eatery
                          </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan1.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan1.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
+					<?php foreach ($listmenu as $sp) :?>
 
 					<div class="col-md-4 col-sm-4">
                          <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan2.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan2.jpg" class="img-responsive" alt="">
+						 <div class="menu-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <a href="public/assets/images/<?php echo $sp['img']; ?>" class="image-popup">
+                                   <img src="public/assets/images/<?php echo $sp['img']; ?>" class="img-responsive" alt="">
                               </a>
                          </div>
                     </div>
+					<?php endforeach; ?>
 
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan3.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan3.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
-
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan4.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan4.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
-
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan5.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan5.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
-
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan6.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan6.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
-
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan7.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan7.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
-
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan8.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan8.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
-
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan9.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan9.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
-
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan10.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan10.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
-
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan11.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan11.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
-
-					<div class="col-md-4 col-sm-4">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="public/assets/images/quan12.jpg" class="image-popup">
-                                   <img src="public/assets/images/quan12.jpg" class="img-responsive" alt="">
-                              </a>
-                         </div>
-                    </div>
                </div>
           </div>
      </section>

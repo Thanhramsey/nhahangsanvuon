@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2022 at 11:15 AM
+-- Generation Time: Aug 05, 2022 at 11:29 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -136,7 +136,8 @@ CREATE TABLE `db_content` (
 
 INSERT INTO `db_content` (`id`, `title`, `alias`, `introtext`, `fulltext`, `img`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`) VALUES
 (7, 'Bảng giá tôn lạnh HOA SEN tháng 7/2022', 'bang-gia-ton-lanh-hoa-sen-thang-7-2022', '', '<p>Gi&aacute; t&ocirc;n Hoa Sen c&oacute; thể thay đổi phụ thuộc v&agrave;o nhu cầu thị trường do đ&oacute; để c&oacute; được gi&aacute; t&ocirc;n Hoa Sen Ch&iacute;nh x&aacute;c qu&yacute; kh&aacute;ch n&ecirc;n li&ecirc;n hệ tới Đại l&yacute; t&ocirc;n Hoa Sen để nhận b&aacute;o gi&aacute; ch&iacute;nh x&aacute;c.</p>\r\n\r\n<p>T&ocirc;n Thế D&acirc;n&nbsp;cập nhật&nbsp;<strong>bảng b&aacute;o gi&aacute; t&ocirc;n Hoa Sen&nbsp;</strong>để qu&yacute; kh&aacute;ch h&agrave;ng tham khảo</p>\r\n\r\n<p><strong>BẢNG B&Aacute;O GI&Aacute; T&Ocirc;N 9 S&Oacute;NG VU&Ocirc;NG &ndash; 5 S&Oacute;NG VU&Ocirc;NG &ndash; 13 S&Oacute;NG LA PH&Ocirc;NG &ndash; T&Ocirc;N C&Aacute;CH NHIỆT &ndash; T&Ocirc;N CLIPLOCK</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong><img alt=\"\" src=\"/web/public/upload/images/bang-bao-gia-ton-2.jpg\" style=\"height:1200px; width:652px\" /></strong></p>\r\n', 'Untitled_design.png', '2022-08-02 14:11:52', '1', '2022-08-02 14:16:53', '1', 1, 1),
-(8, 'Tuyển Dụng ', 'tuyen-dung', '', '<p>Cần tuyển c&aacute;c vị tr&iacute; c&ocirc;ng việc như sau</p>\r\n\r\n<p>- 2 tạp vụ</p>\r\n\r\n<p>- 1 phụ bếp</p>\r\n\r\n<p>- 1 bảo vệ</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"color:#e74c3c\">Li&ecirc;n hệ : 096912312 !</span></p>\r\n', '6.jpg', '2022-08-04 14:52:28', '1', '2022-08-04 14:52:28', '1', 1, 1);
+(8, 'Tuyển Dụng ', 'tuyen-dung', '', '<p>Cần tuyển c&aacute;c vị tr&iacute; c&ocirc;ng việc như sau</p>\r\n\r\n<p>- 2 tạp vụ</p>\r\n\r\n<p>- 1 phụ bếp</p>\r\n\r\n<p>- 1 bảo vệ</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"color:#e74c3c\">Li&ecirc;n hệ : 096912312 !</span></p>\r\n', '6.jpg', '2022-08-04 14:52:28', '1', '2022-08-04 14:52:28', '1', 1, 1),
+(9, 'Bài viết cập nhật món ăn ngon', 'bai-viet-cap-nhat-mon-an-ngon', '', '<p>B&agrave;i viết cập nhật m&oacute;n ăn ngon</p>\r\n\r\n<p>B&agrave;i viết cập nhật m&oacute;n ăn ngon</p>\r\n\r\n<p>B&agrave;i viết cập nhật m&oacute;n ăn ngon</p>\r\n\r\n<p>B&agrave;i viết cập nhật m&oacute;n ăn ngon</p>\r\n\r\n<p>B&agrave;i viết cập nhật m&oacute;n ăn ngon</p>\r\n\r\n<p>B&agrave;i viết cập nhật m&oacute;n ăn ngon</p>\r\n\r\n<p>B&agrave;i viết cập nhật m&oacute;n ăn ngon</p>\r\n\r\n<p>B&agrave;i viết cập nhật m&oacute;n ăn ngon</p>\r\n\r\n<p>B&agrave;i viết cập nhật m&oacute;n ăn ngon</p>\r\n\r\n<p><img alt=\"\" src=\"/web/public/upload/images/Loa-Bluetooth-Xiaomi-Mi-Basic-2-Chinh-hang-2.jpg\" style=\"height:481px; width:840px\" /></p>\r\n', '137396789_415347413218392_5418643466913598160_n.jpg', '2022-08-05 14:05:45', '1', '2022-08-05 14:05:45', '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1149,20 +1150,33 @@ CREATE TABLE `db_slider` (
   `modified` datetime NOT NULL,
   `modified_by` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT 'Supper Admin',
   `trash` tinyint(1) NOT NULL DEFAULT 1,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `type` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `db_slider`
 --
 
-INSERT INTO `db_slider` (`id`, `name`, `link`, `img`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`) VALUES
-(1, 'Banner1', 'banner-1', '2.jpg', '2019-06-13 21:27:24', '1', '2019-06-13 23:42:42', '', 0, 1),
-(2, 'Banner 2', 'Banner-2', 'default.png', '2019-06-13 23:45:04', '1', '2019-06-13 23:45:44', '', 0, 1),
-(3, 'trang chu 1', 'trang-chu', 'default.png', '2019-07-03 17:05:52', '1', '2019-07-03 17:07:18', '', 1, 1),
-(4, 'slider trang chu 2', 'slider-trang-chu-2', 'iphone-banner.jpg', '2019-07-03 17:06:38', '1', '2019-07-03 17:06:38', '1', 1, 1),
-(5, 'slider trang chu 3', 'slider-trang-chu-3', 'xsmaxbanner.png', '2019-07-03 17:06:58', '1', '2019-07-03 17:06:58', '1', 1, 1),
-(6, 'ss', 'ss', 'icon_142e7.png', '2019-07-03 17:08:07', '1', '2019-07-03 17:08:07', '1', 0, 1);
+INSERT INTO `db_slider` (`id`, `name`, `link`, `img`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`, `type`) VALUES
+(9, 'anh 1', 'anh-1', '2022-08-05_15-42-48.png', '2022-08-05 15:40:53', '1', '2022-08-05 15:44:13', '', 1, 1, 1),
+(10, 'anh 2', 'anh-2', 'menu-image2.jpg', '2022-08-05 15:41:56', '1', '2022-08-05 15:41:56', '1', 1, 1, 1),
+(11, 'anh 3', 'anh-3', 'menu-image3.jpg', '2022-08-05 15:44:27', '1', '2022-08-05 15:44:27', '1', 1, 1, 1),
+(12, 'anh 4', 'anh-4', 'menu-image4.jpg', '2022-08-05 15:44:35', '1', '2022-08-05 15:44:35', '1', 1, 1, 1),
+(13, 'anh 5', 'anh-5', 'menu-image5.jpg', '2022-08-05 15:44:44', '1', '2022-08-05 15:44:44', '1', 1, 1, 1),
+(14, 'anh 6', 'anh-6', 'menu-image6.jpg', '2022-08-05 15:44:56', '1', '2022-08-05 15:44:56', '1', 1, 1, 1),
+(15, 'anh 7', 'anh-7', 'quan1.jpg', '2022-08-05 15:45:12', '1', '2022-08-05 15:45:12', '1', 1, 1, 0),
+(16, 'anh 8', 'anh-8', 'quan2.jpg', '2022-08-05 15:45:27', '1', '2022-08-05 15:45:27', '1', 1, 1, 0),
+(17, 'anh 9', 'anh-9', 'quan3.jpg', '2022-08-05 15:45:38', '1', '2022-08-05 15:45:38', '1', 1, 1, 0),
+(18, '10', '10', 'quan4.jpg', '2022-08-05 15:45:46', '1', '2022-08-05 15:45:51', '', 1, 1, 0),
+(19, '11', '11', 'quan5.jpg', '2022-08-05 15:46:00', '1', '2022-08-05 15:46:00', '1', 1, 1, 0),
+(20, '12', '12', 'quan6.jpg', '2022-08-05 15:46:12', '1', '2022-08-05 15:46:12', '1', 1, 1, 0),
+(21, '13', '13', 'quan7.jpg', '2022-08-05 15:46:24', '1', '2022-08-05 15:46:24', '1', 1, 1, 0),
+(22, '14', '14', 'quan8.jpg', '2022-08-05 15:46:37', '1', '2022-08-05 15:46:37', '1', 1, 1, 0),
+(23, '15', '15', 'quan10.jpg', '2022-08-05 15:46:50', '1', '2022-08-05 15:46:50', '1', 1, 1, 0),
+(24, '16', '16', 'quan11.jpg', '2022-08-05 15:47:04', '1', '2022-08-05 15:47:04', '1', 1, 1, 0),
+(25, '17', '17', 'quan12.jpg', '2022-08-05 15:47:13', '1', '2022-08-05 15:47:13', '1', 1, 1, 0),
+(26, 'hi', 'hi', 'quan81.jpg', '2022-08-05 16:03:18', '1', '2022-08-05 16:03:35', '', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1359,7 +1373,7 @@ ALTER TABLE `db_contact`
 -- AUTO_INCREMENT for table `db_content`
 --
 ALTER TABLE `db_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `db_customer`
@@ -1401,7 +1415,7 @@ ALTER TABLE `db_product`
 -- AUTO_INCREMENT for table `db_slider`
 --
 ALTER TABLE `db_slider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `db_user`

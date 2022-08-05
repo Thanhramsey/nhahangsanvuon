@@ -1,6 +1,6 @@
 <div class="content-wrapper">
 	<section class="content-header">
-		<h1><i class="glyphicon glyphicon-picture"></i> Quản lý sliders</h1>
+		<h1><i class="glyphicon glyphicon-picture"></i> Quản lý hình ảnh</h1>
 		<div class="breadcrumb">
 			<?php
 			if($user['role']==1){
@@ -38,7 +38,7 @@
 										<tr>
 											<th class="text-center">ID</th>
 											<th>Hình</th>
-											<th>Tên sliders</th>
+											<th>Tên ảnh</th>
 											<th>Liên kết</th>
 											<th class="text-center">Trạng thái</th>
 											<th class="text-center" colspan="2">Thao tác</th>
@@ -49,7 +49,7 @@
 										<tr>
 											<td class="text-center"><?php echo $row['id'] ?></td>
 											<td style="width:100px">
-												<img src="public/images/banners/<?php echo $row['img'] ?>" class="img-responsive">
+												<img src="./public/assets/images/<?php echo $row['img'] ?>" class="img-responsive">
 											</td>
 											<td><a href="<?php echo base_url() ?>admin/sliders/update/<?php echo $row['id'] ?>"><?php echo $row['name'] ?></a>
 											</td>
@@ -66,13 +66,13 @@
 											<?php
 												if($user['role']==1){
 													echo '<td class="text-center">
-												<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/sliders/update/'.$row['id'].'" role = "button">
+												<a class="btn btn-success btn-xs" href="admin/sliders/update/'.$row['id'].'" role = "button">
 													<span class="glyphicon glyphicon-edit"></span>Sửa
 												</a>
 											</td>';
 												}
 												?>
-											
+
 											<td class="text-center">
 												<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/sliders/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa slider này ?')" role = "button">
 													<span class="glyphicon glyphicon-trash"></span>Xóa

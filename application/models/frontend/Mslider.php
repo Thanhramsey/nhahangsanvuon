@@ -13,4 +13,22 @@ class Mslider extends CI_Model {
             $query = $this->db->get($this->table);
             return $query->result_array();
     }
+
+	public function list_img_menu()
+    {
+            $this->db->where('status', 1);
+            $this->db->where('trash', 1);
+			$this->db->where('type', 0);
+            $query = $this->db->get($this->table);
+            return $query->result_array();
+    }
+
+	public function list_img_quan()
+    {
+            $this->db->where('status', 1);
+            $this->db->where('trash', 1);
+			$this->db->where('type', 1);
+            $query = $this->db->get($this->table);
+            return $query->result_array();
+    }
 }

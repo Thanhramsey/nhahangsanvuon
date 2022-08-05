@@ -15,7 +15,11 @@ class Trangchu extends CI_Controller {
 
 	public function index()
 	{
+		$listmenu=$this->Mslider->list_img_menu();
+		$listquan=$this->Mslider->list_img_quan();
         $this->data['title']='Nhân Mobile - Điện thoại, Laptop, Link kiện chính hãng';
+		$this->data['listmenu']= $listmenu;
+		$this->data['listquan']= $listquan;
         $this->data['view']='index';
 		$this->load->view('frontend/layout',$this->data);
 	}

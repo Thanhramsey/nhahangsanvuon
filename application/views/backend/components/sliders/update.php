@@ -2,7 +2,7 @@
 <div class="content-wrapper" style="min-height: 454px;">
     <form action="<?php echo base_url() ?>admin/sliders/update.html" enctype="multipart/form-data" method="post" accept-charset="utf-8">
         <section class="content-header">
-            <h1><i class="glyphicon glyphicon-picture"></i> Sửa Sliders</h1>
+            <h1><i class="glyphicon glyphicon-picture"></i> Sửa </h1>
             <div class="breadcrumb">
                 <button name="THEM_NEW" type="submit" class="btn btn-primary btn-sm">
                         <span class="glyphicon glyphicon-floppy-save"></span> Lưu[Thêm]
@@ -26,18 +26,11 @@
                                 <div class="error" id="password_error"><?php echo form_error('name')?></div>
                             </div>
                             <div class="form-group">
-                                <label>Liên kết <span class = "maudo">(*)</span></label>
-                                <input type="text" name="link" class="form-control" placeholder="http://link.com" value="<?php echo $row['link'] ?>">
-                                <div class="error" id="password_error"><?php echo form_error('link')?></div>
-                            </div>
-
-                            <!--/.ND-->
-                           </div>
-                           <div class="col-md-3">
-                               <div class="form-group">
-                                <label>Hình ảnh <span class = "maudo">(*)</span></label>
-                                <input type="file" name="img" class="form-control">
-                                <div class="error" id="password_error"><?php echo form_error('img')?></div>
+                                <label>Loại ảnh </label>
+                                <select name="type" class="form-control">
+                                    <option value="1">Hình menu</option>
+                                    <option value="0">Hình quán</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Trạng thái</label>
@@ -46,11 +39,35 @@
                                     <option value="0" <?php if($row['status'] == 0) {echo 'selected';}?>>Ngừng hoạt động</option>
                                 </select>
                             </div>
+							<div class="form-group">
+                                <label>Hình ảnh <span class = "maudo">(*)</span></label>
+								<div class="anh">
+										<!-- Chứa ảnh ở đây -->
+								<img style ="width:300px; height:170px" id="output" src="./public/assets/images/<?php echo $row['img'] ?>"/>
+									</div>
+                                <input type="file" name="img" class="form-control" onchange="loadFile(event)">
+                                <div class="error" id="password_error"><?php echo form_error('img')?></div>
+                            </div>
+                            <!--/.ND-->
+                           </div>
+                           <div class="col-md-3">
+
                            </div>
                         </div>
                     </div><!-- /.box -->
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </section><!-- /.content -->
-    </form>         
+    </form>
 </div>
+
+
+<script>
+	var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
