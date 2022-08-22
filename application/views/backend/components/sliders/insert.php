@@ -26,13 +26,6 @@
                                 <div class="error" id="password_error"><?php echo form_error('name')?></div>
                             </div>
                             <!--/.ND-->
-							<div class="form-group">
-                                <label>Loại ảnh </label>
-                                <select name="type" class="form-control">
-                                    <option value="1">Hình menu</option>
-                                    <option value="0">Hình quán</option>
-                                </select>
-                            </div>
                             <div class="form-group">
                                 <label>Trạng thái </label>
                                 <select name="status" class="form-control">
@@ -41,24 +34,28 @@
                                 </select>
                             </div>
 							<div class="form-group">
+                                    <label>Ảnh đại diện</label>
+                                    <input type="file"  id="image_list" name="image" onchange="loadFile(event)" style="display:none">
+									<label for="image_list" class="btn-upload-img">Chọn file</label>
 									<div class="anh">
 										<!-- Chứa ảnh ở đây -->
-										<img style ="width:300px; height:170px" id="output"/>
+										<img class="img-stl" id="output"/>
 									</div>
-                                    <label>Ảnh đại diện</label>
-                                    <input type="file"  id="image_list" name="img" onchange="loadFile(event)">
                                 </div>
                         </div>
                         <div class="col-md-3">
-
-                            <!-- <div class="form-group">
-                                <label>Hình ảnh <span class = "maudo">(*)</span></label>
-                                <input type="file" name="img" class="form-control" required="">
-                                <div class="error" id="password_error"><?php echo form_error('img')?></div>
-                            </div> -->
-
-
+							<div class="form-group">
+                                <label>Loại ảnh </label>
+                                <select name="type" id="type" class="form-control">
+									<option value="0">Hình quán</option>
+                                    <option value="1">Hình menu</option>
+                                </select>
                             </div>
+                            <div id="gia-detail" class="form-group">
+                                <label>Giá <span class = "maudo">(Để 0 nếu không có giá)</span></label>
+                                <input type="text" name="price" class="form-control" >
+                            </div>
+                        </div>
                     </div>
                 </div><!-- /.box -->
             </div><!-- /.row -->
@@ -70,10 +67,10 @@
 
 <script>
 	var loadFile = function(event) {
-    var output = document.getElementById('output');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function() {
-      URL.revokeObjectURL(output.src) // free memory
-    }
-  };
+		var output = document.getElementById('output');
+		output.src = URL.createObjectURL(event.target.files[0]);
+		output.onload = function() {
+		URL.revokeObjectURL(output.src) // free memory
+		}
+  	};
 </script>

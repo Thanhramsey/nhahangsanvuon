@@ -4,13 +4,6 @@
 <head>
 
 	<title>Nhà Hàng Sân Vườn</title>
-	<!--
-
-Eatery Cafe Template
-
-http://www.templatemo.com/tm-515-eatery
-
--->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="description" content="">
@@ -18,16 +11,16 @@ http://www.templatemo.com/tm-515-eatery
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link rel="icon" type="image/x-icon" href="../public/assets/images/favicon.ico">
-	<link rel="stylesheet" href="../public/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../public/assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../public/assets/css/animate.css">
-	<link rel="stylesheet" href="../public/assets/css/owl.carousel.css">
-	<link rel="stylesheet" href="../public/assets/css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="../public/assets/css/magnific-popup.css">
+	<link rel="icon" type="image/x-icon" href="<?php echo base_url() ?>public/assets/images/favicon.ico">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/animate.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/magnific-popup.css">
 
 	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="../public/assets/css/templatemo-style.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/templatemo-style.css">
 
 </head>
 
@@ -78,26 +71,24 @@ http://www.templatemo.com/tm-515-eatery
 	<section id="content">
 		<div class="container" style="margin-top:50px">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 product-content" id="list-content">
-				<div class="product-wrap" id="info-content">
-					<div class="content-ct">
-						<div class="fs-ne2-it clearfix" style="padding-top: 5px">
-							<div class="fs-ne2-it clearfix">
-								<div class="entry-title">
-									<h2><?php echo $row['title']; ?></h2>
-								</div>
-								<ul class="entry-meta clearfix">
-									<li><i class="fa fa-calendar" style="margin-right: 5px"></i><?php echo $row['created']; ?></li>
-								</ul>
-							</div>
-							<div class="introtext">
-								<p><?php echo $row['introtext']; ?></p>
-							</div>
-							<div class="entry-content">
-								<p><?php echo $row['fulltext']; ?></p>
-							</div>
+				<div>
+					<div class="fs-ne2-it clearfix">
+						<div class="entry-title">
+							<h2><?php echo $row['title']; ?></h2>
 						</div>
+						<ul class="entry-meta clearfix">
+							<li><i class="fa fa-calendar" style="margin-right: 5px"></i><?php  $date=date_create($row['created']);echo date_format($date,"d/m/Y"); ?></li>
+						</ul>
+					</div>
+					<div class="introtext">
+						<p><?php echo $row['introtext']; ?></p>
+					</div>
+					<div class="entry-content">
+						<p><?php echo $row['fulltext']; ?></p>
 					</div>
 				</div>
+			</div>
+			<a href="<?php echo base_url() ?>tin-tuc" class="btn btn-large btn-rounded" style="margin-top:10px;background:#ce3232;color:#fff">Trờ về</a>
 			</div>
 		</div>
 	</section>
@@ -163,17 +154,22 @@ http://www.templatemo.com/tm-515-eatery
 			</div>
 		</div>
 	</footer>
+	<a class="btn-call-now btn-call-01 cursorsHover" href="tel:032 742 7268" rel="nofollow">
+		<em class="licon-telephone"><i class="fa fa-phone"></i></em>
+		<span class="cursorsHover" style="font-size:14px">032 742 7268</span>
+	</a>
+	<div class="go-top"><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-up"></i></div>
 
 
 	<!-- SCRIPTS -->
-	<script src="../public/assets/js/jquery.js"></script>
-	<script src="../public/assets/js/bootstrap.min.js"></script>
-	<script src="../public/assets/js/jquery.stellar.min.js"></script>
-	<script src="../public/assets/js/wow.min.js"></script>
-	<script src="../public/assets/js/owl.carousel.min.js"></script>
-	<script src="../public/assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="../public/assets/js/smoothscroll.js"></script>
-	<script src="../public/assets/js/custom.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/jquery.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/jquery.stellar.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/wow.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/owl.carousel.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/smoothscroll.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/custom.js"></script>
 
 </body>
 

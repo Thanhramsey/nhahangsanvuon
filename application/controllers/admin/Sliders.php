@@ -22,9 +22,17 @@ class Sliders extends CI_Controller {
 		$limit=10;
 		$current=$this->phantrang->PageCurrent();
 		$first=$this->phantrang->PageFirst($limit, $current);
-		$total=$this->Msliders->slider_count();
-		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/sliders');
-		$this->data['list']=$this->Msliders->slider_all($limit,$first);
+		if(count($_POST) == 0){
+			$total=$this->Msliders->slider_count();
+			$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/sliders');
+			$this->data['list']=$this->Msliders->slider_all($limit,$first);
+
+		}else{
+			$total=$this->Msliders->slider_search_count($_POST['name'],$_POST['type']);
+			$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/sliders');
+			$this->data['list']=$this->Msliders->slider_search_all($limit,$first,$_POST['name'],$_POST['type']);
+		}
+
 		$this->data['view']='index';
 		$this->data['title']='Quản lý slider';
 		$this->load->view('backend/layout', $this->data);
@@ -51,6 +59,7 @@ class Sliders extends CI_Controller {
 				'created'=>$today,
 				'created_by'=>$this->session->userdata('id'),
 				'modified'=>$today,
+				'price'=>$_POST['price'],
 				'modified_by'=>$this->session->userdata('id'),
 				'trash'=>1,
 				'status'=>$_POST['status']
@@ -95,6 +104,7 @@ class Sliders extends CI_Controller {
 			$mydata= array(
 				'name' =>$_POST['name'],
 				'modified'=>$today,
+				'price'=>$_POST['price'],
 				'modified_by'=>$this->session->userdata('fullname'),
 				'type' =>$_POST['type'],
 				'trash'=>1,

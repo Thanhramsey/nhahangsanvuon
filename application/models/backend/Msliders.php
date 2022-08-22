@@ -28,7 +28,7 @@ class Msliders extends CI_Model {
         $this->db->where('trash', 1);
         $this->db->where('id', $id);
         $query = $this->db->get($this->table);
-        return $query->row_array();   
+        return $query->row_array();
     }
     //RECYCLEBIN
     public function slider_trash_count()
@@ -68,4 +68,38 @@ class Msliders extends CI_Model {
 		$this->db->where('id',$id);
 		$this->db->update($this->table, $mydata);
 	}
+
+
+
+	public function slider_search_count($name,$type)
+    {
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+		if($type != '')
+        {
+			$this->db->where('type', $type);
+        }
+		if($name != '')
+        {
+            $this->db->like('name', $name);
+        }
+        $query = $this->db->get($this->table);
+        return count($query->result_array());
+    }
+
+	public function slider_search_all($limit,$first,$name,$type)
+    {
+        $this->db->where('trash', 1);
+		if($type != '')
+        {
+			$this->db->where('type', $type);
+        }
+		if($name != '')
+        {
+            $this->db->like('name', $name);
+        }
+        $this->db->order_by('created', 'desc');
+        $query = $this->db->get($this->table, $limit,$first);
+        return $query->result_array();
+    }
 }

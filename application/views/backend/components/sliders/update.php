@@ -26,13 +26,6 @@
                                 <div class="error" id="password_error"><?php echo form_error('name')?></div>
                             </div>
                             <div class="form-group">
-                                <label>Loại ảnh </label>
-                                <select name="type" class="form-control">
-                                    <option value="1">Hình menu</option>
-                                    <option value="0">Hình quán</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label>Trạng thái</label>
                                 <select name="status" class="form-control">
                                     <option value="1" <?php if($row['status'] == 1) {echo 'selected';}?> >Hoạt động</option>
@@ -41,17 +34,28 @@
                             </div>
 							<div class="form-group">
                                 <label>Hình ảnh <span class = "maudo">(*)</span></label>
-								<div class="anh">
-										<!-- Chứa ảnh ở đây -->
-								<img style ="width:300px; height:170px" id="output" src="./public/assets/images/<?php echo $row['img'] ?>"/>
-									</div>
-                                <input type="file" name="img" class="form-control" onchange="loadFile(event)">
+                                <input type="file" id="image_list" name="img" class="form-control" onchange="loadFile(event)" style="display:none">
+								<label for="image_list" class="btn-upload-img">Chọn file</label>
                                 <div class="error" id="password_error"><?php echo form_error('img')?></div>
+								<div class="anh">
+								<!-- Chứa ảnh ở đây -->
+									<img class="img-stl" id="output" src="./public/assets/images/<?php echo $row['img'] ?>"/>
+								</div>
                             </div>
                             <!--/.ND-->
                            </div>
                            <div class="col-md-3">
-
+								<div class="form-group">
+									<label>Loại ảnh </label>
+									<select name="type" class="form-control" onchange="changeMenu()">
+										<option value="0" <?php if($row['type'] == 0) {echo 'selected';}?>>Hình quán</option>
+										<option value="1" <?php if($row['type'] == 1) {echo 'selected';}?>>Hình menu</option>
+									</select>
+								</div>
+								<div id="gia-detail" class="form-group">
+									<label>Giá <span class = "maudo">(Để 0 nếu không có giá)</span></label>
+									<input type="text" name="price" class="form-control"  value="<?php echo $row['price'] ?>" >
+								</div>
                            </div>
                         </div>
                     </div><!-- /.box -->
@@ -70,4 +74,16 @@
       URL.revokeObjectURL(output.src) // free memory
     }
   };
+  var changeMenu = function(event) {
+		var menu = document.getElementById('menu-detail');
+		var gia = document.getElementById('gia-detail');
+		var type = document.getElementById('type');
+		if(type.value == 1){
+			menu.style.display = '';
+			gia.style.display = '';
+		}else{
+			menu.style.display = "none";
+			gia.style.display = "none";
+		}
+  	};
 </script>

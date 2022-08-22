@@ -18,16 +18,16 @@ http://www.templatemo.com/tm-515-eatery
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link rel="icon" type="image/x-icon" href="public/assets/images/favicon.ico">
-	<link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="public/assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="public/assets/css/animate.css">
-	<link rel="stylesheet" href="public/assets/css/owl.carousel.css">
-	<link rel="stylesheet" href="public/assets/css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="public/assets/css/magnific-popup.css">
+	<link rel="icon" type="image/x-icon" href="<?php echo base_url() ?>public/assets/images/favicon.ico">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/animate.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/magnific-popup.css">
 
 	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="public/assets/css/templatemo-style.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>public/assets/css/templatemo-style.css">
 
 </head>
 
@@ -82,15 +82,20 @@ http://www.templatemo.com/tm-515-eatery
 					<h2 style="border-bottom:2px solid black">
 						Tin tức
 					</h2>
-					<div class="fs-newsboxs">
+					<div class="row m-0" style="padding-left:15px">
+						<div class = "text-center pull-left">
+							<ul class ="pagination">
+							<?php echo $strphantrang; ?>
+							</ul>
+						</div>
+					</div>
+					<div class="row m-0" style="padding-left:15px">
 						<?php foreach ($list as $item) : ?>
-							<div class="fs-ne2-it clearfix" style="border-bottom:1px solid black; margin-bottom: 10px">
-								<div class="fs-ne2-if">
+							<div class="col-md-6" style="margin-bottom: 10px;height: 350px;">
 									<a class="fs-ne2-img" href="tin-tuc/<?php echo $item['alias']; ?>">
-										<img style="width: 300px; height: 160px;" src="public/images/posts/<?php echo $item['img']; ?>">
+										<img style="width: 100%; height: 80%;" src="<?php echo base_url() ?>public/images/posts/<?php echo $item['img']; ?>">
 									</a>
-									<div class="fs-n2-info">
-										<h3 style="margin:10px 0px  !important"><a class="fs-ne2-tit" href="tin-tuc/<?php echo $item['alias']; ?>" title=""><?php echo $item['title']; ?></a></h3>
+									<h3 style="margin:10px 0px  !important"><a class="fs-ne2-tit" href="<?php echo base_url() ?>tin-tuc/<?php echo $item['alias']; ?>" title=""><?php echo $item['title']; ?></a></h3>
 										<div class="fs-ne2-txt"><?php echo $item['introtext']; ?></div>
 										<p class="fs-ne2-bot">
 											<span class="fs-ne2-user">
@@ -98,21 +103,13 @@ http://www.templatemo.com/tm-515-eatery
 											</span>
 											<span>Đăng lúc: <?php echo $item['created']; ?></span>
 										</p>
-									</div>
-								</div>
-
 							</div>
 						<?php endforeach; ?>
 
 					</div>
-					<div class="row text-center">
-						<ul class="pagination">
-							<?php echo $strphantrang; ?>
-						</ul>
-					</div>
 				</div>
-
 			</div>
+			<a href="<?php echo base_url() ?>trang-chu" class="btn btn-large btn-rounded" style="margin-top:10px;background:#ce3232;color:#fff">Trờ về</a>
 		</div>
 		</div>
 	</section>
@@ -178,17 +175,22 @@ http://www.templatemo.com/tm-515-eatery
 			</div>
 		</div>
 	</footer>
+	<a class="btn-call-now btn-call-01 cursorsHover" href="tel:032 742 7268" rel="nofollow">
+		<em class="licon-telephone"><i class="fa fa-phone"></i></em>
+		<span class="cursorsHover" style="font-size:14px">032 742 7268</span>
+	</a>
+	<div class="go-top"><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-up"></i></div>
 
 
 	<!-- SCRIPTS -->
-	<script src="public/assets/js/jquery.js"></script>
-	<script src="public/assets/js/bootstrap.min.js"></script>
-	<script src="public/assets/js/jquery.stellar.min.js"></script>
-	<script src="public/assets/js/wow.min.js"></script>
-	<script src="public/assets/js/owl.carousel.min.js"></script>
-	<script src="public/assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="public/assets/js/smoothscroll.js"></script>
-	<script src="public/assets/js/custom.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/jquery.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/jquery.stellar.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/wow.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/owl.carousel.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/smoothscroll.js"></script>
+	<script src="<?php echo base_url() ?>public/assets/js/custom.js"></script>
 
 </body>
 

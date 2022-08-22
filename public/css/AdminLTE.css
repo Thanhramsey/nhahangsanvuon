@@ -1,6 +1,6 @@
 /*!
  * AdminLTE v2.4.12
- * 
+ *
  *   Author:  Colorlib
  *   Support: <https://github.com/ColorlibHQ/AdminLTE/issues>
  *   Repository: git://github.com/ColorlibHQ/AdminLTE.git
@@ -4997,4 +4997,32 @@ hr {
   .table-responsive > .table tr td {
     white-space: normal !important;
   }
+}
+
+
+.btn-upload-img{
+	display: block;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px 20px;
+    background: #3c8dbc;
+    width: 100px;
+    color: #fff;
+}
+
+.img-stl{
+	width:300px;
+	height:250px;
+	padding: 5px;
+	border: 1px dashed black;
+}
+
+.table td{
+	border: 1px solid #dddddd !important;
+	vertical-align: middle !important;
+}
+.table th{
+	background:#3c8dbc;
+	color:#fff;
+	border: 1px solid #dddddd !important;
 }

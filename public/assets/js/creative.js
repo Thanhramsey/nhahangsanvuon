@@ -69,7 +69,7 @@ $(document).ready(function() {
             top: 100
         }
     })
-	
+
 
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
@@ -80,17 +80,16 @@ $(document).ready(function() {
 ;
 (function ($) {
     include('../../js/jquery.rd-parallax.js');
-})(jQuery); 
+})(jQuery);
 
 /* filter
  =============================================*/
 /*--------------------------
 	scrollUp
----------------------------- */	
+---------------------------- */
 	$.scrollUp({
         scrollText: '<i class="fa fa-angle-up"></i>',
         easingType: 'linear',
         scrollSpeed: 900,
         animation: 'fade'
     });
-	   

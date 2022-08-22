@@ -4,8 +4,28 @@
 
     // PRE LOADER
     $(window).load(function(){
-      $('.preloader').fadeOut(1000); // set duration in brackets    
+      $('.preloader').fadeOut(1000); // set duration in brackets
     });
+
+
+	// Go to Top
+    $(function(){
+        // Scroll Event
+        $(window).on('scroll', function(){
+            var scrolled = $(window).scrollTop();
+            if (scrolled > 600) $('.go-top').addClass('active');
+            if (scrolled < 600) $('.go-top').removeClass('active');
+
+			if (scrolled > 600) $('.btn-call-now').addClass('active');
+            if (scrolled < 600) $('.btn-call-now').removeClass('active');
+        });
+        // Click Event
+        $('.go-top').on('click', function() {
+            $("html, body").animate({ scrollTop: "0" },  500);
+        });
+    });
+
+
 
 
     // MENU
@@ -36,7 +56,7 @@
     // PARALLAX EFFECT
     $.stellar({
       horizontalScrolling: false,
-    }); 
+    });
 
 
     // MAGNIFIC POPUP
@@ -62,7 +82,7 @@
         return openerElement.is('img') ? openerElement : openerElement.find('img');
         }
       }
-    });  
+    });
 
 /*
     // CONTACT FORM
@@ -108,7 +128,7 @@
           }, 1000);
             event.preventDefault();
       });
-    });  
+    });
 
 
     // WOW ANIMATION
